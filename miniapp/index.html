@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>BOT STORE</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>BOT STORE</h1>
+      <div id="user-info" class="user-info"></div>
+    </header>
+
+    <main id="content">
+      <section id="home" class="page active">
+        <div class="banner">
+          <h2>Готовые боты и разработка</h2>
+          <p>Выбирай, оплачивай Stars или ₽, получай сразу</p>
+        </div>
+        <h3 class="section-title">Популярное</h3>
+        <div id="featured-products" class="products-grid"></div>
+        <h3 class="section-title">Новинки</h3>
+        <div id="new-products" class="products-grid"></div>
+        <h3 class="section-title">Категории</h3>
+        <div id="categories" class="categories"></div>
+      </section>
+
+      <section id="catalog" class="page">
+        <div class="search-bar">
+          <input type="search" id="search" placeholder="Поиск..." />
+        </div>
+        <div id="catalog-products" class="products-grid"></div>
+      </section>
+
+      <section id="cart" class="page">
+        <div id="cart-list" class="list"></div>
+        <div id="cart-actions" class="hidden" style="margin-top:16px">
+          <p id="cart-total" style="font-weight:700;margin-bottom:12px"></p>
+          <button class="btn primary" id="btn-checkout-stars">Оплатить Stars ⭐</button>
+          <button class="btn secondary" id="btn-checkout-rub" style="margin-top:8px;width:100%">Оплата в рублях ₽</button>
+        </div>
+      </section>
+
+      <section id="orders" class="page">
+        <div id="orders-list" class="list"></div>
+      </section>
+
+      <section id="support" class="page">
+        <p class="muted">Создайте обращение или напишите боту.</p>
+        <button class="btn primary" id="btn-new-ticket">Новый тикет</button>
+        <div id="tickets-list" class="list" style="margin-top:16px"></div>
+      </section>
+
+      <section id="profile" class="page">
+        <div id="profile-data" class="card"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-page="home" class="nav-item active">🏠<span>Главная</span></button>
+      <button data-page="catalog" class="nav-item">📦<span>Каталог</span></button>
+      <button data-page="cart" class="nav-item">🛒<span>Корзина</span></button>
+      <button data-page="orders" class="nav-item">🧾<span>Заказы</span></button>
+      <button data-page="profile" class="nav-item">👤<span>Профиль</span></button>
+    </nav>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
